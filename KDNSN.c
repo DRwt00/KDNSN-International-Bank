@@ -1,15 +1,38 @@
 #include <stdio.h>
+#include <string.h>  
 
 // Function declarations
 void personal_info();
 void business_info();
 void saving_acc();
 void current_acc();
+void sys_user();
 
 int main() {
-	char acc_type;
+	char acc_type, log[5], username[15], password[15];
 
-	printf("\e[1m<-----Welcome to KDNSN International Bank----->\n\e[m");
+	printf("\e[31m\e[1m<-----Welcome to KDNSN International Bank----->\n\e[m\e[0m\n");
+
+
+	printf("Login into system as:\n");
+	printf("1. Adminstrative\n");
+	printf("2. Existing User\n");
+	printf("Enter your option: ");
+	scanf("%s", log);
+
+
+	if (log[0] == '1') {
+		printf("\n\e[32m\e[1m<-----Adminstrative Login----->\n\"");
+		printf("Username: ");
+		scanf("%s", username);
+		printf("Password: ");
+		scanf("%s", password);
+
+		if (strcmp(username, "admin") == 0 && strcmp(password, "password") == 0) {
+			printf("\n\e[32m\e[1m<-----Adminstrative Login Successful----->\"");
+		}		
+		
+	}
 
 	printf("Which account do you want to access");
 	printf("\n1. Current Account");
@@ -19,12 +42,13 @@ int main() {
 
 	if (acc_type == '1') {
 		current_acc();
+
 	} else if (acc_type == '2') {
 		saving_acc();
+
 	} else {
 		printf("Invalid Option");
 	}
-
 	return 0;
 }
 
@@ -107,3 +131,4 @@ void business_info() {
 	scanf("%s", productsOrServices);
 
 }
+s
