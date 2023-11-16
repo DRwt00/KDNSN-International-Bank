@@ -131,4 +131,3 @@ void business_info() {
 	scanf("%s", productsOrServices);
 
 }
-s
